@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="user"
+            type="com.example.lavan.myapplication.model.User"/>
+        <variable
+            name="sinhvien"
+            type="com.example.lavan.myapplication.model.SinhVien"/>
+        <variable
+            name="presenter"
+            type="com.example.lavan.myapplication.model.MainactivityPresenter"/>
+
+        <variable
+            name="ketqua"
+            type="com.example.lavan.myapplication.test.HienThucKetQua"/>
+        <variable
+            name="student"
+            type="com.example.lavan.myapplication.model.Student"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="25sp"
+            android:text="@={user.password}"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_width="match_parent"
+            android:text="@{user.name}"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_width="match_parent"
+            android:text="@={user.password}"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="#555dff"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:text="@{sinhvien.ma}"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_width="match_parent"
+            android:text="@{sinhvien.name}"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Success"
+            android:onClick="@{()->ketqua.success(user.name)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Error"
+            android:onClick="@{()->ketqua.error(user.password)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="match_parent"
+            android:text="@{student.address}"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</layout>
